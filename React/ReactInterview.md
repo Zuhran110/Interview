@@ -199,16 +199,6 @@ npm run dev
 
 ---
 
-**Q16. What are 5 other JS frameworks besides React?**
-
-1. **Angular** — Full framework by Google
-2. **Vue.js** — Progressive, easy to learn
-3. **Svelte** — Compiles to vanilla JS, no virtual DOM
-4. **Next.js** — React-based with SSR/SSG
-5. **Ember.js** — Convention-over-configuration framework
-
----
-
 **Q17. Is React a Framework or Library? What is the difference?**
 
 **React is a Library**, not a framework.
