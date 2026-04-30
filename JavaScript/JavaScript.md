@@ -6,7 +6,7 @@
 
 ---
 
-**Q: What is DOM? What is the difference between HTML and DOM?**
+**Q1: What is DOM? What is the difference between HTML and DOM?**
 
 - **HTML** is the static markup you write in a `.html` file — it's just text/code.
 - **DOM (Document Object Model)** is the live, in-memory tree structure the browser builds from that HTML. JavaScript reads and manipulates the DOM.
@@ -24,7 +24,7 @@ document.getElementById('msg').textContent = 'World'; // modifies the live DOM
 
 ---
 
-**Q: What is JavaScript? What is the role of the JS engine?**
+**Q2: What is JavaScript? What is the role of the JS engine?**
 
 **JavaScript** is a high-level, interpreted, single-threaded programming language primarily used to add interactivity to web pages.
 
@@ -40,7 +40,7 @@ The engine:
 
 ---
 
-**Q: What are Client-side and Server-side?**
+**Q3: What are Client-side and Server-side?**
 
 | Client-side | Server-side |
 |---|---|
@@ -51,7 +51,7 @@ The engine:
 
 ---
 
-**Q: What is Scope in JS?**
+**Q4: What is Scope in JS?**
 
 Scope defines **where a variable is accessible** in code.
 
@@ -75,7 +75,7 @@ function outer() {
 
 ---
 
-**Q: What is the type of a variable declared without `var`, `let`, or `const`?**
+**Q5: What is the type of a variable declared without `var`, `let`, or `const`?**
 
 It becomes an **implicit global variable** — attached to the `window` object (browser) or `global` (Node.js). This is a bug source and is forbidden in strict mode.
 
@@ -94,7 +94,7 @@ function test2() {
 
 ---
 
-**Q: What is Hoisting in JavaScript?**
+**Q6: What is Hoisting in JavaScript?**
 
 Hoisting is JavaScript's behavior of **moving declarations to the top of their scope** before code executes.
 
@@ -115,7 +115,7 @@ let b = 10;
 
 ---
 
-**Q: What is JSON?**
+**Q7: What is JSON?**
 
 **JSON (JavaScript Object Notation)** is a lightweight, text-based data format for storing and exchanging data. It is language-independent but derived from JS object syntax.
 
@@ -142,7 +142,7 @@ const obj = JSON.parse('{"name":"Alice","age":30}');
 
 ---
 
-**Q: What are variables? What is the difference between `var`, `let`, and `const`?**
+**Q8: What are variables? What is the difference between `var`, `let`, and `const`?**
 
 A variable is a **named container for storing data values**.
 
@@ -166,7 +166,7 @@ arr = [];     // TypeError — can't reassign the reference
 
 ---
 
-**Q: What are data types in JS?**
+**Q9: What are data types in JS?**
 
 **Primitive (7 types):** `string`, `number`, `boolean`, `null`, `undefined`, `symbol`, `bigint`
 
@@ -187,7 +187,7 @@ typeof function(){}  // "function"
 
 ---
 
-**Q: What is the difference between primitive and non-primitive data types?**
+**Q10: What is the difference between primitive and non-primitive data types?**
 
 | Primitive | Non-Primitive |
 |---|---|
@@ -212,7 +212,7 @@ console.log(obj1.name); // 'Bob' — both point to same object
 
 ---
 
-**Q: What is the difference between `null` and `undefined` in JS?**
+**Q11: What is the difference between `null` and `undefined` in JS?**
 
 | `null` | `undefined` |
 |---|---|
@@ -233,7 +233,7 @@ null === undefined  // false (strict equality)
 
 ---
 
-**Q: What is the use of the `typeof` operator?**
+**Q12: What is the use of the `typeof` operator?**
 
 `typeof` returns a **string** describing the type of a value.
 
@@ -251,7 +251,7 @@ typeof Symbol()    // "symbol"
 
 ---
 
-**Q: What is type coercion in JS?**
+**Q13: What is type coercion in JS?**
 
 Type coercion is JavaScript's **automatic conversion** of one data type to another.
 
@@ -281,7 +281,7 @@ Use `===` (strict equality) to avoid unexpected coercion bugs.
 
 ---
 
-**Q: What is operator precedence?**
+**Q14: What is operator precedence?**
 
 Operator precedence determines the **order in which operators are evaluated** in an expression. Higher precedence operators execute first.
 
@@ -295,7 +295,7 @@ Operator precedence determines the **order in which operators are evaluated** in
 
 ---
 
-**Q: What is the difference between unary, binary, and ternary operators?**
+**Q15: What is the difference between unary, binary, and ternary operators?**
 
 | Type | Operands | Example |
 |---|---|---|
@@ -318,7 +318,7 @@ const status = age >= 18 ? 'adult' : 'minor'; // 'adult'
 
 ---
 
-**Q: What is short-circuit evaluation in JS?**
+**Q16: What is short-circuit evaluation in JS?**
 
 Short-circuit evaluation means JavaScript **stops evaluating** as soon as the result is determined.
 
@@ -342,7 +342,7 @@ const count = value ?? 0;
 
 ---
 
-**Q: What are the types of conditional statements in JS?**
+**Q17: What are the types of conditional statements in JS?**
 
 ```js
 // 1. if / else if / else
@@ -373,7 +373,7 @@ const city = user?.address?.city; // undefined if user or address is null
 
 ---
 
-**Q: What is the difference between `==` and `===`?**
+**Q18: What is the difference between `==` and `===`?**
 
 | `==` (Loose equality) | `===` (Strict equality) |
 |---|---|
@@ -393,7 +393,7 @@ null === undefined // false
 
 ---
 
-**Q: What is the difference between Spread and Rest operator in JS?**
+**Q19: What is the difference between Spread and Rest operator in JS?**
 
 Both use `...` syntax but serve opposite purposes.
 
@@ -426,7 +426,7 @@ const [first, ...rest] = [1, 2, 3, 4];
 
 ---
 
-**Q: What are Arrays in JS? How to get, add & remove elements?**
+**Q20: What are Arrays in JS? How to get, add & remove elements?**
 
 An array is an ordered, zero-indexed collection of values.
 
@@ -449,7 +449,7 @@ fruits.splice(1, 1);          // remove 1 element at index 1
 
 ---
 
-**Q: What is `indexOf()` method of an Array?**
+**Q21: What is `indexOf()` method of an Array?**
 
 Returns the **first index** of a specified element, or `-1` if not found.
 
@@ -467,7 +467,7 @@ arr.includes('b');    // true
 
 ---
 
-**Q: What is the difference between `find()` and `filter()` method of an array?**
+**Q22: What is the difference between `find()` and `filter()` method of an array?**
 
 | `find()` | `filter()` |
 |---|---|
@@ -488,7 +488,7 @@ users.filter(u => u.active);  // [{ id: 1... }, { id: 3... }]
 
 ---
 
-**Q: What is the `slice()` method of an Array?**
+**Q23: What is the `slice()` method of an Array?**
 
 `slice(start, end)` returns a **shallow copy** of a portion of an array. It does NOT modify the original.
 
@@ -503,7 +503,7 @@ arr.slice();      // [1, 2, 3, 4, 5] — shallow copy of entire array
 
 ---
 
-**Q: What is the difference between `push()` and `concat()` methods?**
+**Q24: What is the difference between `push()` and `concat()` methods?**
 
 | `push()` | `concat()` |
 |---|---|
@@ -519,7 +519,7 @@ const arr2 = arr.concat([5, 6]); // arr unchanged, arr2 = [1, 2, 3, 4, 5, 6]
 
 ---
 
-**Q: What is the difference between `pop()` and `shift()` methods?**
+**Q25: What is the difference between `pop()` and `shift()` methods?**
 
 | `pop()` | `shift()` |
 |---|---|
@@ -535,7 +535,7 @@ arr.shift();  // returns 1, arr = [2, 3]
 
 ---
 
-**Q: What is the `splice()` method of an Array?**
+**Q26: What is the `splice()` method of an Array?**
 
 `splice(start, deleteCount, ...items)` **modifies** the array in place — can remove, replace, or insert elements.
 
@@ -554,7 +554,7 @@ arr.splice(2, 1, 'a', 'b'); // replaces index 2
 
 ---
 
-**Q: What is the difference between `slice()` and `splice()`?**
+**Q27: What is the difference between `slice()` and `splice()`?**
 
 | `slice()` | `splice()` |
 |---|---|
@@ -565,7 +565,7 @@ arr.splice(2, 1, 'a', 'b'); // replaces index 2
 
 ---
 
-**Q: What is the difference between `map()` and `forEach()`?**
+**Q28: What is the difference between `map()` and `forEach()`?**
 
 | `map()` | `forEach()` |
 |---|---|
@@ -588,7 +588,7 @@ items.forEach(item => item.classList.add('active'));
 
 ---
 
-**Q: How do you sort and reverse an array?**
+**Q29: How do you sort and reverse an array?**
 
 ```js
 const nums = [3, 1, 4, 1, 5, 9];
@@ -607,7 +607,7 @@ nums.reverse(); // [9, 5, 1, 4, 1, 3]
 
 ---
 
-**Q: What is Array Destructuring in JS?**
+**Q30: What is Array Destructuring in JS?**
 
 Destructuring lets you **unpack** array values into variables in a single statement.
 
@@ -634,7 +634,7 @@ const [head, ...tail] = [1, 2, 3, 4];
 
 ---
 
-**Q: What are array-like objects in JS?**
+**Q31: What are array-like objects in JS?**
 
 Array-like objects have **indexed elements and a `length` property** but are not actual arrays — they don't have array methods like `map`, `filter`, `push`.
 
@@ -650,7 +650,7 @@ test(1, 2);
 
 ---
 
-**Q: How to convert an array-like object into an array?**
+**Q32: How to convert an array-like object into an array?**
 
 ```js
 // 1. Array.from()
@@ -672,7 +672,7 @@ const arr2 = Array.prototype.slice.call(arguments);
 
 ---
 
-**Q: What are loops? What are the types of loops in JS?**
+**Q33: What are loops? What are the types of loops in JS?**
 
 Loops repeat a block of code multiple times.
 
@@ -687,7 +687,7 @@ Loops repeat a block of code multiple times.
 
 ---
 
-**Q: What is the difference between `for` and `while` loops?**
+**Q34: What is the difference between `for` and `while` loops?**
 
 ```js
 // for — when you know the count upfront
@@ -707,7 +707,7 @@ Use `for` when you know the range; use `while` when the end condition depends on
 
 ---
 
-**Q: What is the difference between `while` and `do...while` loops?**
+**Q35: What is the difference between `while` and `do...while` loops?**
 
 | `while` | `do...while` |
 |---|---|
@@ -728,7 +728,7 @@ do {
 
 ---
 
-**Q: What is the difference between `break` and `continue` statements?**
+**Q36: What is the difference between `break` and `continue` statements?**
 
 - **`break`** — exits the loop entirely.
 - **`continue`** — skips the current iteration and moves to the next.
@@ -743,7 +743,7 @@ for (let i = 0; i < 10; i++) {
 
 ---
 
-**Q: What is the difference between `for` and `for...of` loops?**
+**Q37: What is the difference between `for` and `for...of` loops?**
 
 | `for` | `for...of` |
 |---|---|
@@ -765,7 +765,7 @@ for (const value of arr) {
 
 ---
 
-**Q: What is the difference between `for...of` and `for...in` loops?**
+**Q38: What is the difference between `for...of` and `for...in` loops?**
 
 | `for...of` | `for...in` |
 |---|---|
@@ -785,7 +785,7 @@ for (const key in obj) console.log(key);   // 'x', 'y'
 
 ---
 
-**Q: What is `forEach` loop? Compare it with `for...of` and `for...in`.**
+**Q39: What is `forEach` loop? Compare it with `for...of` and `for...in`.**
 
 | | `forEach` | `for...of` | `for...in` |
 |---|---|---|---|
@@ -811,7 +811,7 @@ for (const val of arr) {
 
 ---
 
-**Q: When to use `for...of` loop vs `forEach` method?**
+**Q40: When to use `for...of` loop vs `forEach` method?**
 
 Use **`for...of`** when:
 - You need `break` or `continue`.
@@ -828,7 +828,7 @@ Use **`forEach`** when:
 
 ---
 
-**Q: What are Functions in JS? What are the types of functions?**
+**Q41: What are Functions in JS? What are the types of functions?**
 
 A function is a **reusable block of code** that performs a specific task.
 
@@ -857,7 +857,7 @@ async function fetchData() { return await getData(); }
 
 ---
 
-**Q: What is the difference between named and anonymous functions?**
+**Q42: What is the difference between named and anonymous functions?**
 
 | Named function | Anonymous function |
 |---|---|
@@ -879,7 +879,7 @@ arr.map(x => x * 2); // arrow function (also anonymous by nature)
 
 ---
 
-**Q: What is a function expression in JS?**
+**Q43: What is a function expression in JS?**
 
 A function expression assigns a function to a variable. Unlike function declarations, they are **not hoisted**.
 
@@ -898,7 +898,7 @@ const factorial = function fact(n) {
 
 ---
 
-**Q: What are Arrow Functions in JS? What is their use?**
+**Q44: What are Arrow Functions in JS? What is their use?**
 
 Arrow functions are a **concise syntax** for function expressions. Key difference: they do **not have their own `this`** — they inherit `this` from the enclosing scope.
 
@@ -928,7 +928,7 @@ const obj = {
 
 ---
 
-**Q: What is a callback function in JavaScript?**
+**Q45: What is a callback function in JavaScript?**
 
 A callback is a **function passed as an argument to another function**, to be called at a later time.
 
@@ -950,7 +950,7 @@ button.addEventListener('click', handler);   // event callback
 
 ---
 
-**Q: What is a Higher-Order Function in JS?**
+**Q46: What is a Higher-Order Function in JS?**
 
 A Higher-Order Function (HOF) is a function that **takes another function as an argument** or **returns a function**.
 
@@ -992,7 +992,7 @@ add(5, 3); // 5, 3 are ARGUMENTS
 
 ---
 
-**Q: In how many ways can we pass parameters in functions in JS?**
+**Q47: In how many ways can we pass parameters in functions in JS?**
 
 ```js
 // 1. Positional
@@ -1017,7 +1017,7 @@ function old() { console.log(arguments); }
 
 ---
 
-**Q: What are Default Parameters in functions?**
+**Q48: What are Default Parameters in functions?**
 
 Default parameters let you assign **fallback values** if an argument is `undefined` or not passed.
 
@@ -1034,7 +1034,7 @@ greet(null, 'Hey');        // 'Hey, null' — null does NOT trigger default
 
 ---
 
-**Q: What is the use of event handling in JS?**
+**Q49: What is the use of event handling in JS?**
 
 Event handling lets you **respond to user actions** (clicks, input, scroll, etc.) or browser events.
 
@@ -1059,7 +1059,7 @@ element.removeEventListener('click', handler);
 
 ---
 
-**Q: What are First-Class Functions in JS?**
+**Q50: What are First-Class Functions in JS?**
 
 JS treats functions as **first-class citizens** — they can be:
 - Assigned to variables.
@@ -1076,7 +1076,7 @@ const funcs = [greet, makeGreeter()]; // stored in array
 
 ---
 
-**Q: What are Pure and Impure Functions in JS?**
+**Q51: What are Pure and Impure Functions in JS?**
 
 **Pure function:**
 - Same input **always** returns the same output.
@@ -1096,7 +1096,7 @@ function getRandom() { return Math.random(); }
 
 ---
 
-**Q: What is Function Currying in JS?**
+**Q52: What is Function Currying in JS?**
 
 Currying transforms a function with **multiple arguments** into a **sequence of functions**, each taking one argument.
 
@@ -1121,7 +1121,7 @@ const triple = multiply(3);
 
 ---
 
-**Q: `call()`, `apply()`, and `bind()` methods in JS?**
+**Q53: `call()`, `apply()`, and `bind()` methods in JS?**
 
 All three explicitly set the `this` context of a function.
 
@@ -1148,7 +1148,7 @@ aliceIntro('?'); // "Hey, I'm Alice?"
 
 ---
 
-**Q: What is a string?**
+**Q54: What is a string?**
 
 A string is a sequence of characters enclosed in single quotes, double quotes, or backticks. Strings are **immutable** — you cannot change individual characters.
 
@@ -1160,7 +1160,7 @@ const greeting = `Hello, ${name}!`; // template literal
 
 ---
 
-**Q: Template Literals and String Interpolation**
+**Q55: Template Literals and String Interpolation**
 
 Template literals (backticks) allow **embedded expressions**, multi-line strings, and cleaner concatenation.
 
@@ -1188,7 +1188,7 @@ console.log(`${age >= 18 ? 'Adult' : 'Minor'}`);
 
 ---
 
-**Q: Single quotes vs double quotes vs backticks**
+**Q56: Single quotes vs double quotes vs backticks**
 
 | | Single `'` | Double `"` | Backtick `` ` `` |
 |---|---|---|---|
@@ -1200,7 +1200,7 @@ All are equivalent for basic strings. Backticks are preferred for dynamic/multi-
 
 ---
 
-**Q: String Operations in JS**
+**Q57: String Operations in JS**
 
 ```js
 const str = 'Hello, World!';
@@ -1222,7 +1222,7 @@ str.repeat(2);            // 'Hello, World!Hello, World!'
 
 ---
 
-**Q: What is string immutability?**
+**Q58: What is string immutability?**
 
 Strings cannot be **changed in place** — any string method returns a **new string**.
 
@@ -1238,7 +1238,7 @@ console.log(str);    // 'hello' — original unchanged
 
 ---
 
-**Q: Different ways to concatenate strings in JS**
+**Q59: Different ways to concatenate strings in JS**
 
 ```js
 const a = 'Hello';
@@ -1269,7 +1269,7 @@ const s5 = parts.join(', ');
 
 ---
 
-**Q: How do you select, modify, or remove DOM elements?**
+**Q60: How do you select, modify, or remove DOM elements?**
 
 ```js
 // Select
@@ -1292,7 +1292,7 @@ el.parentNode.removeChild(el);        // old way
 
 ---
 
-**Q: Selectors in JS DOM**
+**Q61: Selectors in JS DOM**
 
 ```js
 // By ID
@@ -1312,7 +1312,7 @@ document.querySelectorAll('ul > li');     // all matching
 
 ---
 
-**Q: Difference between `getElementById`, `getElementsByClassName`, and `getElementsByTagName`?**
+**Q62: Difference between `getElementById`, `getElementsByClassName`, and `getElementsByTagName`?**
 
 | Method | Returns | Live? |
 |---|---|---|
@@ -1326,7 +1326,7 @@ A **live** collection updates automatically when the DOM changes.
 
 ---
 
-**Q: What is the difference between `querySelector()` and `querySelectorAll()`?**
+**Q63: What is the difference between `querySelector()` and `querySelectorAll()`?**
 
 ```js
 // querySelector — returns FIRST matching element (or null)
@@ -1339,7 +1339,7 @@ all.forEach(card => card.classList.add('active'));
 
 ---
 
-**Q: Methods to manipulate elements, properties and attributes of JS DOM**
+**Q64: Methods to manipulate elements, properties and attributes of JS DOM**
 
 ```js
 const el = document.querySelector('#box');
@@ -1369,7 +1369,7 @@ el.style.display = 'none';
 
 ---
 
-**Q: What is the difference between `innerHTML` and `textContent`?**
+**Q65: What is the difference between `innerHTML` and `textContent`?**
 
 | `innerHTML` | `textContent` |
 |---|---|
@@ -1388,7 +1388,7 @@ el.innerHTML = userInput;   // DANGEROUS if userInput contains scripts
 
 ---
 
-**Q: How to add or remove properties of HTML elements from the DOM?**
+**Q66: How to add or remove properties of HTML elements from the DOM?**
 
 ```js
 const input = document.querySelector('input');
@@ -1409,7 +1409,7 @@ el.classList.toggle('active');
 
 ---
 
-**Q: How to add or remove style of HTML elements in the DOM?**
+**Q67: How to add or remove style of HTML elements in the DOM?**
 
 ```js
 const el = document.querySelector('.box');
@@ -1434,7 +1434,7 @@ console.log(styles.fontSize);
 
 ---
 
-**Q: How to create new elements in DOM? Difference between `createElement()` and `cloneNode()`?**
+**Q68: How to create new elements in DOM? Difference between `createElement()` and `cloneNode()`?**
 
 ```js
 // createElement — creates a brand new element
@@ -1462,7 +1462,7 @@ document.body.appendChild(clone);
 
 ---
 
-**Q: What is Error Handling in JS?**
+**Q69: What is Error Handling in JS?**
 
 Error handling is anticipating and gracefully managing runtime errors so the program doesn't crash.
 
@@ -1481,7 +1481,7 @@ try {
 
 ---
 
-**Q: What is the role of the `finally` block in JS?**
+**Q70: What is the role of the `finally` block in JS?**
 
 `finally` always executes — whether an error was thrown or not, and even if there's a `return` in `try` or `catch`.
 
@@ -1502,7 +1502,7 @@ Use `finally` for: closing database connections, releasing resources, clearing t
 
 ---
 
-**Q: What is the purpose of the `throw` statement in JS?**
+**Q71: What is the purpose of the `throw` statement in JS?**
 
 `throw` lets you **manually create and throw an error** with a custom message or type.
 
@@ -1531,7 +1531,7 @@ throw new ValidationError('Invalid input');
 
 ---
 
-**Q: What is Error Propagation in JS?**
+**Q72: What is Error Propagation in JS?**
 
 When an error is thrown and not caught in the current function, it **propagates up the call stack** until it's caught by a `try-catch` or crashes the program.
 
@@ -1549,7 +1549,7 @@ try {
 
 ---
 
-**Q: Error Handling Best Practices**
+**Q73: Error Handling Best Practices**
 
 1. Always catch errors at the appropriate level.
 2. Use specific error types (`TypeError`, `RangeError`, custom errors).
@@ -1562,7 +1562,7 @@ try {
 
 ---
 
-**Q: What are the different types of errors in JS?**
+**Q74: What are the different types of errors in JS?**
 
 | Error Type | Cause |
 |---|---|
@@ -1587,7 +1587,7 @@ eval('{ invalid');      // SyntaxError
 
 ---
 
-**Q: What are objects in JS?**
+**Q75: What are objects in JS?**
 
 An object is a **collection of key-value pairs** (properties and methods). It's the most fundamental data structure in JavaScript.
 
@@ -1604,7 +1604,7 @@ user.greet(); // "Hi, I'm Alice"
 
 ---
 
-**Q: In how many ways can we create an object?**
+**Q76: In how many ways can we create an object?**
 
 ```js
 // 1. Object literal (most common)
@@ -1634,7 +1634,7 @@ function createPerson(name) { return { name, greet() { return 'Hi'; } }; }
 
 ---
 
-**Q: What is the difference between an array and an object?**
+**Q77: What is the difference between an array and an object?**
 
 | Array | Object |
 |---|---|
@@ -1650,7 +1650,7 @@ const obj = { fruit1: 'apple', fruit2: 'banana' }; // named keys
 
 ---
 
-**Q: How to manipulate Objects in JS?**
+**Q78: How to manipulate Objects in JS?**
 
 ```js
 const user = { name: 'Alice', age: 30 };
@@ -1676,7 +1676,7 @@ Object.entries(user);      // [['name', 'Alice'], ['email', '...']]
 
 ---
 
-**Q: Dot Notation vs Bracket Notation**
+**Q79: Dot Notation vs Bracket Notation**
 
 ```js
 const user = { name: 'Alice', 'first name': 'Alice' };
@@ -1696,7 +1696,7 @@ user['first' + ' ' + 'name']; // computed key
 
 ---
 
-**Q: How to iterate through Objects in JS?**
+**Q80: How to iterate through Objects in JS?**
 
 ```js
 const obj = { a: 1, b: 2, c: 3 };
@@ -1720,7 +1720,7 @@ Object.values(obj).forEach(val => console.log(val));
 
 ---
 
-**Q: How to check if a property exists?**
+**Q81: How to check if a property exists?**
 
 ```js
 const obj = { name: 'Alice', age: undefined };
@@ -1744,7 +1744,7 @@ obj.name !== undefined;  // true
 
 ---
 
-**Q: How to clone an object?**
+**Q82: How to clone an object?**
 
 ```js
 const original = { name: 'Alice', scores: [1, 2, 3] };
@@ -1760,7 +1760,7 @@ const deepClone2 = structuredClone(original);           // modern, handles more 
 
 ---
 
-**Q: What is the difference between deep copy and shallow copy in JS?**
+**Q83: What is the difference between deep copy and shallow copy in JS?**
 
 | Shallow Copy | Deep Copy |
 |---|---|
@@ -1784,7 +1784,7 @@ console.log(obj.nested.b); // 2 — independent!
 
 ---
 
-**Q: Sets in JS**
+**Q84: Sets in JS**
 
 A `Set` is a collection of **unique values** — no duplicates allowed.
 
@@ -1808,7 +1808,7 @@ const unique = [...new Set([1, 2, 2, 3, 3])]; // [1, 2, 3]
 
 ---
 
-**Q: Map Object in JS**
+**Q84: Map Object in JS**
 
 A `Map` is a collection of **key-value pairs** where keys can be ANY type (unlike plain objects where keys are strings/symbols).
 
@@ -1842,7 +1842,7 @@ map.forEach((value, key) => console.log(key, value));
 
 ---
 
-**Q: Events in JS**
+**Q85: Events in JS**
 
 An event is something that **happens in the browser** — user interaction or browser action.
 
@@ -1861,7 +1861,7 @@ element.addEventListener('submit', (e) => { e.preventDefault(); });
 
 ---
 
-**Q: Event Delegation in JS**
+**Q86: Event Delegation in JS**
 
 Instead of adding listeners to each child, add **one listener to the parent** and use `event.target` to identify which child was clicked.
 
@@ -1883,7 +1883,7 @@ document.querySelector('ul').addEventListener('click', (e) => {
 
 ---
 
-**Q: Event Bubbling and Event Capturing in JS**
+**Q87: Event Bubbling and Event Capturing in JS**
 
 Events travel in 3 phases:
 1. **Capturing** — from root → target (top-down).
@@ -1910,7 +1910,7 @@ child.addEventListener('click', (e) => {
 
 ---
 
-**Q: `event.preventDefault()` method in JS**
+**Q88: `event.preventDefault()` method in JS**
 
 Prevents the **default browser behavior** for an event (form submission, link navigation, etc.).
 
@@ -1953,7 +1953,7 @@ Use regular functions when you need `this` to refer to the element.
 
 ---
 
-**Q: How to remove (unattach) an event handler from an element?**
+**Q89: How to remove (unattach) an event handler from an element?**
 
 ```js
 // Must reference the same function — anonymous functions cannot be removed
