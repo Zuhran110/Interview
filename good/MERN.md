@@ -1,28 +1,13 @@
 # MERN Stack Interview Questions & Answers
 
 > **Other topics covered in dedicated files:**
-> - JavaScript → [JavaScript/JavaScript.md](../JavaScript/JavaScript.md)
-> - React → [React/ReactInterview.md](../React/ReactInterview.md)
-> - Node.js / Express → [Backend/question.md](../Backend/question.md)
+> - JavaScript → [JavaScript.md](JavaScript.md)
+> - React → [React.md](React.md)
+> - Node.js / Express → [Backend.md](Backend.md)
 
 ---
 
 ## 1. Web Architecture & Development Basics
-
-### SOAP vs REST
-**Q: What are the core structural differences between SOAP and REST?**
-
-| Feature        | SOAP                                   | REST                          |
-|----------------|----------------------------------------|-------------------------------|
-| Protocol       | Strict protocol (XML only)             | Architectural style           |
-| Format         | XML                                    | JSON, XML, HTML, etc.         |
-| Standards      | WS-Security, WS-AtomicTransaction      | Uses HTTP natively            |
-| State          | Can be stateful                        | Stateless                     |
-| Use case       | Enterprise, banking, legacy systems    | Web/mobile APIs               |
-
-REST is simpler, lightweight, and more widely used for modern APIs. SOAP is preferred when strict contracts and built-in security standards are required.
-
----
 
 ### GraphQL vs REST
 **Q: Why is GraphQL often considered more efficient for specific data-fetching scenarios?**

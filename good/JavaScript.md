@@ -743,28 +743,6 @@ for (let i = 0; i < 10; i++) {
 
 ---
 
-**Q: What is the difference between `for` and `for...of` loops?**
-
-| `for` | `for...of` |
-|---|---|
-| Index-based | Value-based |
-| Manual index management | Cleaner, no index needed |
-| Works on any iterable with index | Works on any iterable (array, string, Map, Set) |
-
-```js
-const arr = ['a', 'b', 'c'];
-
-for (let i = 0; i < arr.length; i++) {
-  console.log(arr[i]); // index-based
-}
-
-for (const value of arr) {
-  console.log(value); // direct value — cleaner
-}
-```
-
----
-
 **Q: What is the difference between `for...of` and `for...in` loops?**
 
 | `for...of` | `for...in` |
@@ -808,19 +786,6 @@ for (const val of arr) {
   if (val === 2) break;
 }
 ```
-
----
-
-**Q: When to use `for...of` loop vs `forEach` method?**
-
-Use **`for...of`** when:
-- You need `break` or `continue`.
-- You use `async/await` inside the loop.
-- Iterating non-array iterables (Map, Set, strings).
-
-Use **`forEach`** when:
-- Simpler array iteration with index access.
-- No need to break or use async.
 
 ---
 
@@ -1030,31 +995,6 @@ greet('Alice');            // 'Hello, Alice!'
 greet('Bob', 'Hi');        // 'Hi, Bob!'
 greet(undefined, 'Hey');   // 'Hey, Guest!' — undefined triggers default
 greet(null, 'Hey');        // 'Hey, null' — null does NOT trigger default
-```
-
----
-
-**Q: What is the use of event handling in JS?**
-
-Event handling lets you **respond to user actions** (clicks, input, scroll, etc.) or browser events.
-
-```js
-// addEventListener (preferred)
-const btn = document.getElementById('myBtn');
-btn.addEventListener('click', function(event) {
-  console.log('Button clicked!', event.target);
-});
-
-// Common events
-element.addEventListener('click', handler);
-element.addEventListener('keydown', handler);
-element.addEventListener('submit', handler);
-element.addEventListener('mouseover', handler);
-element.addEventListener('change', handler);
-element.addEventListener('load', handler);
-
-// Remove event listener
-element.removeEventListener('click', handler);
 ```
 
 ---
@@ -1292,26 +1232,6 @@ el.parentNode.removeChild(el);        // old way
 
 ---
 
-**Q: Selectors in JS DOM**
-
-```js
-// By ID
-document.getElementById('header');
-
-// By class
-document.getElementsByClassName('btn');
-
-// By tag
-document.getElementsByTagName('p');
-
-// CSS selectors (modern, preferred)
-document.querySelector('#header');        // first match
-document.querySelector('.btn.active');    // compound selector
-document.querySelectorAll('ul > li');     // all matching
-```
-
----
-
 **Q: Difference between `getElementById`, `getElementsByClassName`, and `getElementsByTagName`?**
 
 | Method | Returns | Live? |
@@ -1384,52 +1304,6 @@ el.textContent = '<b>Bold</b>';  // shows literal string "<b>Bold</b>"
 // Always use textContent when inserting user-provided text!
 el.textContent = userInput; // safe from XSS
 el.innerHTML = userInput;   // DANGEROUS if userInput contains scripts
-```
-
----
-
-**Q: How to add or remove properties of HTML elements from the DOM?**
-
-```js
-const input = document.querySelector('input');
-
-// Add property
-input.disabled = true;
-input.value = 'Hello';
-
-// Remove property
-input.disabled = false;
-delete input.dataset.myProp;
-
-// classList for CSS classes
-el.classList.add('active');
-el.classList.remove('active');
-el.classList.toggle('active');
-```
-
----
-
-**Q: How to add or remove style of HTML elements in the DOM?**
-
-```js
-const el = document.querySelector('.box');
-
-// Inline styles
-el.style.color = 'red';
-el.style.backgroundColor = 'blue';
-el.style.display = 'none';
-
-// Remove inline style
-el.style.color = ''; // resets to stylesheet value
-
-// Add/remove CSS classes (preferred approach)
-el.classList.add('hidden');
-el.classList.remove('hidden');
-el.classList.toggle('dark-mode');
-
-// getComputedStyle — get actual applied styles
-const styles = window.getComputedStyle(el);
-console.log(styles.fontSize);
 ```
 
 ---

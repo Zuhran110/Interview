@@ -1,4 +1,4 @@
-# Node.js & Express — 100 Interview Questions & Answers
+# Node.js & Express — Interview Questions & Answers
 
 ---
 
@@ -42,18 +42,6 @@ A runtime is the foundation; a framework is built on top of it.
 | More verbose | Less code, cleaner API |
 
 Express makes building web servers with Node.js much faster and simpler.
-
----
-
-**Q4. What are the differences between client-side and server-side?**
-
-| Client-Side | Server-Side |
-|---|---|
-| Runs in the **browser** | Runs on the **server** |
-| JavaScript, HTML, CSS | Node.js, Python, Java, etc. |
-| Handles UI, events, animations | Handles business logic, DB, auth |
-| Has access to DOM | Has access to file system, DB, OS |
-| Code is visible to the user | Code is hidden from the user |
 
 ---
 
@@ -402,26 +390,6 @@ Use `path.join()` instead of string concatenation to avoid OS-specific issues.
 
 ---
 
-**Q27. Explain the role of the OS module.**
-
-The `os` module provides information about the operating system.
-
-```js
-const os = require('os');
-
-os.platform();     // 'linux', 'win32', 'darwin'
-os.arch();         // 'x64', 'arm64'
-os.hostname();     // computer name
-os.homedir();      // '/home/alice'
-os.tmpdir();       // '/tmp'
-os.totalmem();     // total RAM in bytes
-os.freemem();      // free RAM in bytes
-os.cpus();         // array of CPU core info
-os.uptime();       // system uptime in seconds
-```
-
----
-
 **Q28. Explain the role of the `events` module. How to handle events in Node?**
 
 The `events` module provides the **EventEmitter** class — the foundation of Node's async, event-driven architecture.
@@ -445,33 +413,6 @@ emitter.emit('userLogin', { name: 'Alice' });
 emitter.removeListener('userLogin', handler);
 emitter.removeAllListeners('userLogin');
 ```
-
----
-
-**Q29. What are event arguments?**
-
-Event arguments are **data passed along when an event is emitted**. They are received as parameters in the listener function.
-
-```js
-emitter.on('purchase', (item, price, qty) => {
-  console.log(`Bought ${qty}x ${item} for $${price * qty}`);
-});
-
-emitter.emit('purchase', 'Laptop', 999, 2); // Bought 2x Laptop for $1998
-```
-
----
-
-**Q30. What is the difference between a function and an event?**
-
-| Function | Event |
-|---|---|
-| Called **directly** by name | **Emitted** and listened to |
-| Synchronous (called inline) | Can be async — listener runs when event fires |
-| Tightly coupled to caller | Decoupled — emitter doesn't know who's listening |
-| `add(2, 3)` | `emitter.emit('add', 2, 3)` |
-
-Events enable **loose coupling** — the emitter doesn't need to know about the listeners.
 
 ---
 
@@ -767,22 +708,6 @@ Triggered by: `next(err)` in any middleware or route handler.
 
 ---
 
-**Q46. If you have five middlewares, in which one will you do error handling?**
-
-The **last** middleware should be the error handler. It should be defined **after all routes and other middleware**.
-
-```js
-app.use(morgan('dev'));          // 1. Logging
-app.use(express.json());         // 2. Body parsing
-app.use(authMiddleware);         // 3. Authentication
-app.use('/api', routes);         // 4. Routes
-app.use(errorHandler);           // 5. Error handling — ALWAYS LAST
-```
-
-Any unhandled error passed via `next(err)` from middlewares 1–4 will be caught here.
-
----
-
 **Q47. What is built-in middleware? How to serve static files from Express.js?**
 
 Express has three built-in middleware functions:
@@ -822,18 +747,6 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(helmet());
 ```
-
----
-
-**Q49. Can you summarize all the types of middleware?**
-
-| Type | How to apply | Purpose |
-|---|---|---|
-| Application-level | `app.use(fn)` | Runs for all routes in the app |
-| Router-level | `router.use(fn)` | Runs for routes in that router |
-| Error-handling | `app.use((err,req,res,next)=>{})` | Catches errors — always last |
-| Built-in | `express.json()`, `express.static()` | Parsing, serving static files |
-| Third-party | npm install + `app.use()` | Logging, security, CORS, etc. |
 
 ---
 
@@ -1029,26 +942,6 @@ app.use('/api/orders', orderRouter);
 
 ---
 
-**Q61. Share a real application use of routing.**
-
-**E-commerce REST API structure:**
-
-```
-GET    /api/products          — list all products
-GET    /api/products/:id      — get one product
-POST   /api/products          — create product (admin)
-PUT    /api/products/:id      — update product (admin)
-DELETE /api/products/:id      — delete product (admin)
-
-POST   /api/auth/register     — register user
-POST   /api/auth/login        — login, get JWT
-
-GET    /api/orders            — get user's orders (auth required)
-POST   /api/orders            — place an order (auth required)
-```
-
----
-
 **Q62. What is route chaining in Express?**
 
 Route chaining uses `.route()` to define multiple HTTP methods on the same path without repeating the path.
@@ -1081,30 +974,6 @@ app.use('/api/users', userRouter);
 
 ---
 
-**Q64. How to implement route nesting in Express?**
-
-```js
-// routes/posts.js
-const router = express.Router({ mergeParams: true }); // inherit parent params
-router.get('/', async (req, res) => {
-  const posts = await Post.find({ userId: req.params.userId });
-  res.json(posts);
-});
-module.exports = router;
-
-// routes/users.js
-const postRouter = require('./posts');
-const router = express.Router();
-router.use('/:userId/posts', postRouter);
-module.exports = router;
-
-// app.js
-app.use('/api/users', require('./routes/users'));
-// Result: GET /api/users/123/posts
-```
-
----
-
 ## Express Framework - Template Engines
 
 ---
@@ -1120,47 +989,6 @@ app.set('views', './views');
 app.get('/profile', (req, res) => {
   res.render('profile', { name: 'Alice', age: 30 }); // renders views/profile.ejs
 });
-```
-
----
-
-**Q66. Name some template engine libraries.**
-
-| Engine | Syntax style |
-|---|---|
-| **EJS** | `<%= variable %>` — closest to HTML |
-| **Pug (Jade)** | Indentation-based, no closing tags |
-| **Handlebars** | `{{ variable }}` — logic-less |
-| **Mustache** | `{{ variable }}` — minimal logic |
-| **Nunjucks** | Django/Jinja2-like syntax |
-
----
-
-**Q67. How to implement the EJS templating engine?**
-
-```bash
-npm install ejs
-```
-
-```js
-// app.js
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
-app.get('/users', async (req, res) => {
-  const users = await User.find();
-  res.render('users', { users, title: 'User List' });
-});
-```
-
-```html
-<!-- views/users.ejs -->
-<h1><%= title %></h1>
-<ul>
-  <% users.forEach(user => { %>
-    <li><%= user.name %> — <%= user.email %></li>
-  <% }) %>
-</ul>
 ```
 
 ---
@@ -1359,40 +1187,6 @@ app.use(cors({
 const obj = { name: 'Alice', age: 30 };
 const json = JSON.stringify(obj);   // serialization → '{"name":"Alice","age":30}'
 const parsed = JSON.parse(json);    // deserialization → { name: 'Alice', age: 30 }
-```
-
----
-
-**Q80. What are the types of serialization?**
-
-| Format | Use case |
-|---|---|
-| **JSON** | Web APIs — human-readable, universal |
-| **XML** | SOAP, legacy systems |
-| **Binary (Protocol Buffers/MessagePack)** | High performance, compact |
-| **CSV** | Spreadsheets, data export |
-| **YAML** | Config files |
-
-JSON is the standard for modern REST APIs.
-
----
-
-**Q81. How to serialize and deserialize in Node.js?**
-
-```js
-// JSON Serialization
-const user = { id: 1, name: 'Alice' };
-const jsonString = JSON.stringify(user);         // '{"id":1,"name":"Alice"}'
-const parsedUser = JSON.parse(jsonString);        // { id: 1, name: 'Alice' }
-
-// Pretty print
-const pretty = JSON.stringify(user, null, 2);
-
-// Express auto-serializes with res.json()
-app.get('/user', (req, res) => res.json(user)); // auto JSON.stringify
-
-// Express auto-deserializes with express.json() middleware
-app.use(express.json()); // req.body is already parsed object
 ```
 
 ---
