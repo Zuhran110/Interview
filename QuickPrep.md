@@ -1,7 +1,7 @@
 # ⚡ Last-Minute Quick Prep — Must-Know Interview Questions
 
 > The highest-frequency questions only — review these if you're short on time.
-> Full answers & more questions: [JavaScript.md](JavaScript.md) · [Backend.md](Backend.md) · [React.md](React.md) · [MERN.md](MERN.md) · [Coding.md](Coding.md)
+> Full answers & more questions, grouped by topic: [JavaScript/](JavaScript/) · [Backend/](Backend/) · [React/](React/) · [MERN/](MERN/) · [Coding/](Coding/)
 
 ---
 
@@ -179,7 +179,7 @@ Processes documents through stages: `$match` (filter), `$group` (aggregate), `$p
 
 ---
 
-## Coding (practice these — answers in [Coding.md](Coding.md))
+## Coding (practice these — answers in [Coding/](Coding/))
 
 - Reverse a string
 - Check if a string is a palindrome
